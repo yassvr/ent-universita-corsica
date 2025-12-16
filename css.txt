@@ -1,0 +1,221 @@
+2.1. Le reset + body
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+    color: #333;
+}
+
+
+* : sélectionne tous les éléments.
+
+margin: 0; padding: 0; : on enlève les marges par défaut du navigateur.
+
+box-sizing: border-box; : calcul des tailles plus logique (bordures incluses).
+
+body : style global :
+
+font-family : police de caractère.
+
+background : couleur de fond gris clair.
+
+color : couleur de texte par défaut.
+
+2.2. La barre noire (topbar)
+.topbar {
+    background: #262626;
+    color: #fff;
+    font-size: 12px;
+}
+
+.topbar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.topbar : tout le header noir.
+
+background: noir.
+
+color: texte en blanc.
+
+.topbar-inner :
+
+max-width: 1200px; : largeur max → page centrée.
+
+margin: 0 auto; : centre horizontalement.
+
+display: flex; : met les enfants (gauche/droite) sur la même ligne.
+
+justify-content: space-between; : un bloc à gauche, un à droite.
+
+align-items: center; : verticale bien centrée.
+
+Les liens :
+
+.topbar-right a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.topbar-right a:hover {
+    text-decoration: underline;
+}
+
+
+Tu peux déjà jouer en changeant la couleur, la taille pour voir l’effet.
+
+2.3. Bandeau logo + titre
+.page-header {
+    background: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.page-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 250px;
+}
+
+
+.page-header : fond blanc, petite bordure en bas.
+
+.page-header-inner : encore un container centré, en flex :
+
+le logo et le titre sont sur la même ligne.
+
+gap: 250px; = espace entre logo et titre (comme un gros “margin” horizontal).
+
+Logo :
+
+.logo-square {
+    width: 70px;
+    height: 70px;
+    border: 1px solid #999;
+    background: #e7e7e7;
+}
+
+
+Titre :
+
+.title-block h1 {
+    color: #ff6600;
+    font-weight: normal;
+    font-size: 38px;
+}
+
+.subtitle {
+    margin-left: 10px;
+    color: #ff6600;
+    font-size: 16px;
+}
+
+
+Tu remarques qu’on ne met pas tout sur une seule classe : on découpe en petits morceaux spécifiques (logo-square, subtitle…).
+
+2.4. Zone principale + cartes
+.main-area {
+    max-width: 1200px;
+    margin: 25px auto 40px;
+}
+
+
+encore une largeur max + centrée.
+
+.card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    padding: 20px 25px 25px;
+    margin-bottom: 15px;
+}
+
+
+.card = rectangles blancs :
+
+background: white.
+
+border: fine bordure grise.
+
+padding: espace à l’intérieur de la carte.
+
+margin-bottom: espace entre les cartes.
+
+2.5. Formulaire et ligne du mot de passe
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 13px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+
+Champ + œil :
+
+.password-line {
+    display: flex;
+}
+
+.password-line input {
+    border: 2px solid #ff6600;
+    border-right: none;
+}
+
+.eye-box {
+    width: 40px;
+    border: 2px solid #ff6600;
+    border-left: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    font-size: 14px;
+}
+
+
+password-line est en display: flex; → input et eye-box sont sur la même ligne.
+
+L’input et l’œil partagent la même bordure orange, on enlève la bordure à droite de l’input (border-right: none) et à gauche de l’œil (border-left: none) → ça crée un seul grand rectangle.
+
+2.6. Boutons
+.btn-orange {
+    margin-top: 5px;
+    background: #ff6600;
+    color: #fff;
+    border: 1px solid #ff6600;
+    padding: 6px 16px;
+    font-size: 11px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+.btn-orange:hover {
+    background: #e05700;
+}
+
+
+text-transform: uppercase; : met le texte en majuscules.
+
+cursor: pointer; : curseur “main” quand on passe dessus.
+
+:hover : style quand la souris est au-dessus.
+
+L’autre bouton btn-outline pareil mais fond blanc et texte orange.
